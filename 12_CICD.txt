@@ -1,0 +1,147 @@
+### **CI/CD Overview:**
+- **Continuous Integration (CI):** The process where developers frequently merge code 
+    into a shared repository, triggering automated testing to catch issues early.
+- **Continuous Delivery (CD):** Ensures that software is always in a deployable state
+     by automating the deployment process after testing.
+
+
+### **Key CI/CD Steps:**
+1. **Unit Testing:** Testing individual code modules to ensure correctness.
+2. **Static Code Analysis:** Scanning the code without execution to identify bugs,
+     vulnerabilities, and code quality issues.
+3. **Code Quality & Vulnerability Checks:** Tools like **SonarQube** ensure that code adheres
+     to quality standards and is free from vulnerabilities.
+4. **Automation Testing:** Functional and end-to-end tests simulate real-world usage scenarios.
+5. **Reports Generation:** Collect and store metadata (test results, code coverage, etc.) 
+    for analysis.
+6. **Deployment:** Deploy the application to environments such as development, staging,
+     or production after all tests pass.
+
+### **Task Management & Version Control:**
+- **Jira:** Used to divide tasks into manageable parts, enabling better tracking.
+- **Version Control System (VCS):** GitHub (or similar) stores code and manages versioning.
+
+---
+
+### **Jenkins CI/CD Pipeline Orchestration:**
+- **Jenkins** orchestrates the CI/CD pipeline, handling various stages such as 
+    build, test, and deploy.
+  - **Version Control (GitHub):** Developers push code to GitHub.
+  - **Jenkins Pipelines:**
+    - **Maven/JUnit** for building and testing.
+    - **SonarQube** for code quality and vulnerability analysis.
+    - **Kubernetes/Docker/EC2** for scaling and deploying.
+    - **ALM Tools** for reporting and managing the application lifecycle.
+
+#### **Example Pipeline:**
+- A developer pushes version 1 to GitHub.
+- **Jenkins** detects the change, pulls the code, builds it, runs tests, 
+performs static code analysis, and then deploys the app to either a development,
+ staging, or production environment.
+
+---
+
+### **Scaling Jenkins with Kubernetes:**
+- **Jenkins Master-Worker Architecture:**
+  - The **Jenkins Master** controls the pipeline.
+  - **Jenkins Workers** execute the actual jobs (build, test, etc.).
+  
+- **Scaling Challenge:** Running multiple Jenkins workers on EC2 instances
+ can be resource-heavy (CPU, RAM). Managing these instances manually 
+ increases cost and complexity.
+  
+- **Solution with Kubernetes:**
+  - Kubernetes can dynamically scale Jenkins workers by spinning up or down Docker containers
+   based on the load.
+  - Kubernetes handles load balancing, scaling, and resource management efficiently,
+   ensuring that Jenkins pipelines run smoothly.
+
+---
+
+### **GitHub Actions vs. Jenkins:**
+- **Jenkins:** A powerful platform but requires manual setup and configuration.
+- **GitHub Actions:** Event-driven, integrated into GitHub, and triggers workflows 
+    based on specific events like code pushes or pull requests.
+  - **Kubernetes with Jenkins:** Used to scale pipelines efficiently.
+  - **GitHub Actions:** Preferred for smaller, GitHub-native projects due to ease of setup
+     and event-driven nature.
+
+---
+
+### **Jenkins Zero to Hero Setup:**
+
+1. **Create an Ubuntu EC2 Instance:**
+   - SSH into the instance and install Java (JDK).
+   - Install Jenkins.
+   - By default, Jenkins runs on port 8080, which is usually blocked for incoming traffic.
+
+2. **Configure Jenkins Access:**
+   - Update inbound rules for the EC2 instance to allow traffic on port 8080.
+   - Retrieve the admin password with:
+     ```bash
+     sudo cat /password-file-location
+     ```
+   - Install common plugins for Jenkins.
+
+3. **Jenkins Architecture:**
+   - Jenkins should have a **master** to control pipelines and workers to execute jobs.
+   - If a worker node (like EC2) is idle for too long, it can be expensive to maintain.
+   - **Solution:** Use **Docker containers** for workers since containers 
+    can be easily created or removed as needed.
+
+4. **Install Docker on Jenkins Workers:**
+   ```bash
+   sudo apt install docker.io
+   ```
+   - Grant Jenkins access to Docker:
+     ```bash
+     sudo usermod -aG docker jenkins
+     su - jenkins
+     ```
+
+5. **Install Docker Pipeline Plugin in Jenkins:**
+   - Manage Jenkins -> Manage Plugins -> Install Docker Pipeline Plugin.
+
+6. **Freestyle vs. Pipeline Projects:**
+   - Earlier, Jenkins only supported **Freestyle Projects** where jobs were created
+     using a GUI.
+   - **Pipeline Projects** are now preferred since they use a declarative approach via
+         **Jenkinsfile** (written in Groovy), allowing code-driven pipelines.
+   
+   - **Pipeline Syntax Generator:** Helps generate pipeline code for various stages
+     (build, test, deploy).
+
+7. **Docker Pipeline Workflow:**
+   - Jenkins fetches code from GitHub.
+   - Searches for the required Docker image (build environment). 
+        If unavailable, Jenkins creates one.
+   - After the job finishes, the container is automatically removed.
+
+---
+
+### **Multi-Stage Pipelines:**
+- Multi-stage pipelines allow different environments (frontend, backend, database) 
+    to run in parallel:
+  - **Frontend (Ubuntu)**
+  - **Backend (Oracle)**
+  - **Database (CentOS VM)**
+
+  Each stage executes in a separate container, which can be dynamically created and removed 
+    to reduce maintenance overhead.
+
+---
+
+### **ArgoCD for Continuous Delivery:**
+- **ArgoCD** is a tool for continuous delivery (CD), allowing you to manage 
+    Kubernetes applications with GitOps.
+- A typical setup might involve:
+  - GitHub -> Jenkins -> ArgoCD/Ansible -> Kubernetes/Production.
+
+---
+
+### **Jenkins Interview Questions:**
+1. **Explain the CI/CD Process for Web Development:**
+   - Discuss stages like version control, build, test, static code analysis, and deployment.
+2. **How Do You Handle Worker Nodes in Jenkins?**
+   - Use Docker containers as Jenkins workers, allowing dynamic scaling and easy management.
+

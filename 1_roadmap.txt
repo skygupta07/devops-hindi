@@ -1,0 +1,47 @@
+topics to study in sequence 
+1. what, why , role in sdlc
+2. learn linux -> must learn | good to learn 
+        create linux machine on aws
+        shell commands
+
+3. virtualisation 
+4. shell scripting 
+5. git -> vcs , commands
+6. CI/CD
+        -> jenkins , ec2
+
+7. configuration (ansible)
+    playbook (connect 2 vm)
+
+8. infrastructure
+    terraform, ec2, aws
+
+9. docker (containerization)
+    -> vm container
+    why 
+    -> volumes , networking 
+    -> reduce image size 
+
+10. kubernetes 
+
+--- complete devops zero to hero -----
+
+
+then you may go to advanced 
+
+1. ci/CD
+2. shell script
+3. monitoring 
+4. k8 projects
+
+---- cloud platform --------
+
+-> go for aws 
+-> aws zero to hero (30 videos) -> 30 services
+
+----- terraform advanced -----
+
+-> python
+    api 
+    serverless 
+

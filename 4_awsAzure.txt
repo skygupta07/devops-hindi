@@ -1,0 +1,45 @@
+earlier startups would have their own datacenters but nowadays even big
+organizations rely on 2nd party data center services for their vms
+
+aws console    , azure portal
+
+
+
+let's say on regular basis you are requested to create 100 vms daily, then 
+creating so much vms manually is hectic , so we use automation here...
+    (we use aws ec2 api) -> now he can write scripts
+
+popular cloud service providers are: aws, azure, gcp, digital ocean
+
+user request should be valid , authenticate, authorised to create ec2 instance.
+
+we can write scripts using aws cli, aws api, aws cdk (boto 3 -> python library),
+aws CFT (cloud formation template), terraform
+
+terraform is one of the alternate to automate resource creation (platform independent ->
+i.e. it can automate my resources on aws, azure, gcp or anywhere...)
+
+ec2 instance or virtual machines all are infrastructure...
+
+if you have option to choose amazon cli or terraform , and you know that your 
+company is very much specific to using only aws services then in that case it is 
+better that you choose aws cli over terraform..
+
+but nowadays we can see organizations using hybrid cloud system... for example 
+companies prefer gcp for ai/ml things.. then in case terraform is good to go
+
+it is very important to store key-value pair , else you would not be able to 
+login again to your ec2 instance without using key - value
+
+-------- let's say you have created your ec2 instance , now you want to access that 
+vitual machine on your windows...then for that i downloaded the mobaxterm app from chrome and 
+installed it on my pc.....then usme jaake vm type select kara, key-value wali 
+file upload kari...and i was able to login to ec2 instance...
+
+
+
+
+
+
+
+

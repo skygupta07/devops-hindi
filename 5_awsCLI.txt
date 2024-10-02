@@ -1,0 +1,45 @@
+ec2 instance mene create kara and then usko access kaha se karu virtual 
+machine ko ... simple hai instance id ki details mai gaya and then usko 
+connect kiya...
+
+but the above step is not feasible that you will do for single virtual machines...
+so it is better that you use mobaxterm, or nomachine or putty for (windows) and 
+iterm2 for mac
+
+now using any terminal how can i log in to hired virtual machine.....
+    go to terminal and type  
+    ssh -i /pathWherePemFileIsStored virtualMachine@publicIpAddress
+
+    i -> identify karna....
+    but jab aap aise karoge to aaega... .pem wali file is too open ...
+    then basically you need to change permissions of the file 
+
+    chmod 600 /.pemfileLocation      karna hoga..
+
+
+    and then again ssh -i /.pemfileLocation ubuntu@publicIpAddress
+
+agar .pem file download kari and finder usko trace nahi kar paa raha to 
+usko simply kisi dusre folder mai daal do ... phir trace karne lagega...
+
+------
+
+aws cli install karwaya ...   (aws version        terminal mai likh ke check bhi kar liya..)
+actually mai chahta hu ki aws ke ui se cheeje na karu jabki wo saara kaam like 
+ec2 instance launch karna s3 bucket wagera sab terminal se hi access kar pau...
+
+in sab ke liye mujhe pehle authenticate karna hoga... 
+    using -> top right mai jaake credentials mai then access id , secret access id fetch kiya..
+
+
+command line mai jaake aws configure       likha  issey ab wo khud hi acces key , security key mangega..
+
+
+---- method 3 -> to talk to aws -------
+    falls under IAAC (infrastructure as a code)
+aws cloud formation template....
+
+    boto3 -    python module
+
+
+aws cli command references -> you may check or chatgpt

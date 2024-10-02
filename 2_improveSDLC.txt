@@ -1,0 +1,23 @@
+software development life cycle
+    set of standards set in software industries to : 
+    design , develop, test software
+
+end goal is to deliver the high quality product...
+
+steps : 
+    planning -> requirements 
+        defining  (documentation -> sdlc)
+            designing -> HLD(high level design)
+                building  * -> developing and pushing to git
+                    testing * -> QA (quality assurance team) -> check from git 
+                        deploy * -> production -> customer
+
+                devops enginner -> fastens the process...
+                    
+                    * -> can be automated using devops
+
+
+-> end goal yahi hai ki company ki efficiency increase karna uske liye ye to 
+pata hona chahiye ki hamara kya role hai ... aur dusro ka kya role hai ye bhi 
+dekhna hoga....
+

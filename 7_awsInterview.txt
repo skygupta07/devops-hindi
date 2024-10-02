@@ -1,0 +1,51 @@
+Que1 ->  Define and explain the three basic types of cloud services and the AWS products that are built based on them?
+CSN Computing Storage Networking
+
+Here are some of the AWS products that are built based on the three cloud service types:
+
+Computing - These include EC2, Elastic Beanstalk, Lambda, Auto-Scaling, and Lightsat.
+Storage - These include S3, Glacier, Elastic Block Storage (EBS), Elastic File System (EFS).
+Networking - These include VPC, Amazon CloudFront, Route53
+
+-> availability zones are the areas that are present inside the regions
+-> create customized content for the audience of a specific geographical area is geo - targeting
+
+
+Que2 ->  What are the tools and techniques that you can use in AWS to identify if you are paying more than you should be, and how to correct it?
+You can know that you are paying the correct amount for the resources that you are using by employing the following resources:
+
+-> Check the Top Services Table
+        It is a dashboard in the cost management console that shows you the top five most used services. 
+        This will let you know how much money you are spending on the resources in question.
+
+-> Cost Explorer
+        There are cost explorer services available that will help you to view and analyze your usage costs for the last 13 months. 
+        You can also get a cost forecast for the upcoming three months.
+
+-> AWS Budgets
+        This allows you to plan a budget for the services. 
+        Also, it will enable you to check if the current plan meets your budget and the details of how you use the services.
+
+-> Cost Allocation Tags
+        This helps in identifying the resource that has cost more in a particular month. 
+        It lets you organize your resources and cost allocation tags to keep track of your AWS costs.
+
+-> AWS services that are not region-specific are:
+        IAM
+        Route 53
+        Web Application Firewall 
+        CloudFront
+
+-> To support multiple devices with various resolutions like laptops, tablets, and smartphones,
+we need to change the resolution and format of the video. This can be done easily by an AWS Service 
+tool called the Elastic Transcoder, which is a media transcoding in the cloud that exactly 
+lets us do the needful. It is easy to use, cost-effective, and highly scalable for businesses and developers.
+
+
+=> EC2 is short for Elastic Compute Cloud, and it provides scalable computing capacity. 
+Using Amazon EC2 eliminates the need to invest in hardware, leading to faster development 
+and deployment of applications. You can use Amazon EC2 to launch as many or as few virtual 
+servers as needed, configure security and networking, and manage storage. It can scale up or 
+down to handle changes in requirements, reducing the need to forecast traffic. 
+EC2 provides virtual computing environments called “instances.”
+

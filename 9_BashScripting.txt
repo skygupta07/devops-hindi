@@ -1,0 +1,27 @@
+good practices to follow to write shell script : 
+
+1. always comment your code 
+2. write metadata about that particular script on top
+3. set -x        to run script in debug mode
+4. set -e        exit the script when there is an error 
+5. set -o        pipefail
+
+
+
+
+
+commands : 
+
+1. ps -ef      command will list down all the processes that are running on system 
+2. ps -ef | grep "amazon"       filter out all the processes, that are run by amazon 
+3. ./firstScript.sh       will work only if you have included the #!/bin/bash     character in 
+top of the file and also given the file permission to execute.....
+
+4. bash firstScript.sh       will work coz you have explicitly specified the bash 
+
+5. pipe symbol receives the output from stdout only ....
+i.e. date | echo "today is "                -> will print only today is       and not the date .. coz 
+date gives stdin    
+
+6. awk    command is so powerful that it could give specific column from the output....
+
